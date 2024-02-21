@@ -22,7 +22,10 @@ const AddBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:8081/addBook', values)
+      await axios.post(
+        'https://128c-13-48-67-35.ngrok-free.app/addBook',
+        values
+      )
       navigate('/')
     } catch (err) {
       console.log(err)
@@ -60,7 +63,7 @@ const AddBook = () => {
             placeholder="Published Date"
             onChange={handleInput}
           />
-          <button className='submitBtn'>Submit</button>
+          <button className="submitBtn">Submit</button>
         </form>
       </div>
     </div>

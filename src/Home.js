@@ -16,7 +16,7 @@ const Home = () => {
 
   const getBooks = () => {
     axios
-      .get('http://localhost:8081/getbooks', { params: filters })
+      .get('https://128c-13-48-67-35.ngrok-free.app/getbooks', { params: filters })
       .then((response) => {
         // Format dates before setting state
         const formattedBooks = response.data.map((book) => {
