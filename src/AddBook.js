@@ -22,10 +22,7 @@ const AddBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(
-        'https://128c-13-48-67-35.ngrok-free.app/addBook',
-        values
-      )
+      await axios.post('/addBook', values)
       navigate('/')
     } catch (err) {
       console.log(err)
