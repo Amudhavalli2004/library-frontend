@@ -1,0 +1,75 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .add {
+    margin-top: 10px;
+    margin-left: 900px;
+    .link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .filters {
+    input {
+      width: 600px;
+      height: 50px;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 5px;
+      margin-left: 675px;
+      padding:10px;
+      -webkit-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+      -moz-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+      box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+    }
+  }
+  .books {
+    display: flex;
+    flex-direction: column;
+    width:800px;
+        margin:auto;
+    gap: 20px;
+    h1{
+        margin:auto;
+    }
+    .table {
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(145,132,145,1);
+-moz-box-shadow: 1px 1px 5px 0px rgba(145,132,145,1);
+box-shadow: 1px 1px 5px 0px rgba(145,132,145,1);
+        
+      tr {
+        
+        border: 1px solid black;
+        border-radius: 5px;
+        th {
+            width:100vw;
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+        }
+        td {
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+        }
+      }
+    }
+    .btnsDiv{
+    display: flex;
+    width:900px;
+    margin-left:250px;
+    gap:30px;
+    button{
+        border:none;
+  background: #3a86ff;
+  color:white;
+  padding:10px;
+  border-radius: 5px;
+  width:150px;
+    }
+   
+}
+  }
+}
+
+
