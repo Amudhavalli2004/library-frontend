@@ -60,7 +60,7 @@ const AddBook = () => {
             placeholder="Published Date"
             onChange={handleInput}
           />
-          <button className="submitBtn">Submit</button>
+          <button className='submitBtn'>Submit</button>
         </form>
       </div>
     </div>

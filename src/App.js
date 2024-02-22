@@ -3,11 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import AddBook from './AddBook'
 import axios from 'axios'
-axios.defaults.baseURL = 'https://128c-13-48-67-35.ngrok-free.app/'
+
+axios.defaults.baseURL = 'https://2dcd-13-48-67-35.ngrok-free.app'
 axios.defaults.headers = {
   'Content-Type': 'application/json',
   'ngrok-skip-browser-warning': '69420',
 }
+
 function App() {
   return (
     <BrowserRouter>
