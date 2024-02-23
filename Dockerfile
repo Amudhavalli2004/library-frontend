@@ -1,6 +1,9 @@
-FROM node:18-alpine
-COPY . .
-RUN npm install
+FROM node:latest
 WORKDIR /app
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
+COPY . .
 CMD ["npm", "start"]
 EXPOSE 3000
+
