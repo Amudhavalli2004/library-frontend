@@ -1,10 +1,12 @@
 .home {
   display: flex;
   flex-direction: column;
+  margin-top:30px;
   gap: 30px;
+  .heading{
+    margin:auto;
+  }
   .add {
-    margin-top: 10px;
-    margin-left: 900px;
     .link {
       text-decoration: none;
       color: black;
@@ -13,8 +15,10 @@
  
   .filters {
     display:flex;
-    gap:50px;
-    justify-content: space-around;
+    gap:150px;
+    margin-left:300px;
+    
+    align-items: start;
      .total{
     border: 1px solid rgba(0, 0, 0, 0);
       border-radius: 5px;
@@ -22,9 +26,9 @@
       -webkit-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
       -moz-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
       box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
-    width:300px;
-    margin-left:100px;
-    padding:20px;
+    width:250px;
+    max-height:50px;
+    padding-x:20px;
     border-radius:5px;
     span{
 font-weight:bold;
@@ -39,6 +43,30 @@ font-weight:bold;
       -webkit-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
       -moz-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
       box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+    }
+    .wishList{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      button{
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 5px;
+        padding:10px;
+        -webkit-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        -moz-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        background-color:white;
+      }
+      .wishlist-container{
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 5px;
+        padding:10px;
+        -webkit-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        -moz-box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        box-shadow: 1px 1px 8px 0px rgba(110, 98, 110, 1);
+        background-color:white;
+        
+      }
     }
   }
   .books {
@@ -77,14 +105,7 @@ box-shadow: 1px 1px 5px 0px rgba(145,132,145,1);
     width:900px;
     margin-left:250px;
     gap:30px;
-    button{
-        border:none;
-  background: #3a86ff;
-  color:white;
-  padding:10px;
-  border-radius: 5px;
-  width:150px;
-    }
+    
    
 }
   }
@@ -93,5 +114,12 @@ box-shadow: 1px 1px 5px 0px rgba(145,132,145,1);
 .navbar{
   margin:auto;
 }
-
+.addBtn{
+        border:none;
+  background: #3a86ff;
+  color:white;
+  padding:10px;
+  border-radius: 5px;
+  width:100px;
+    }
 

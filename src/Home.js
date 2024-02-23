@@ -12,6 +12,8 @@ const Home = () => {
   const lindex = cp * recordpage
   const findex = lindex - recordpage
   const record = books.slice(findex, lindex)
+   const [wishlistBooks, setWishlistBooks] = useState([])
+   const [open,setOpen]=useState(false)
 
   const npage = Math.ceil(books.length / recordpage)
   const numbers = [...Array(npage + 1).keys()].slice(1)
@@ -58,15 +60,18 @@ const Home = () => {
     setCP(id)
   }
 
+  const handleWishList=(e)=>{
+    e.preventDefault();
+    setOpen(!open)
+  }
+
+
   return (
     <>
       <div className="home">
-        <div className="add">
-          <Link to="/add" className="link">
-            <h1>Add Books</h1>
-          </Link>
+        <div className='heading'>
+          <h1>Welcome to the world of books</h1>
         </div>
-
         <div className="filters">
           <div className="total">
             Total Number of books:
@@ -78,6 +83,31 @@ const Home = () => {
             placeholder="Search by Title, Author, or Published On..."
             onChange={(e) => setSearch(e.target.value)}
           />
+          <div className="wishList">
+            <button onClick={handleWishList}>Wishlist</button>
+            {open && (
+              <div className="wishlist-container">
+                <h2>Wishlist</h2>
+                {wishlistBooks.length > 0 ? (
+                  <ul>
+                    {wishlistBooks.map((book, index) => (
+                      <li key={index}>
+                        {book.title}
+                        {/* Optionally, add other book details or actions */}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>Your wishlist is empty.</p>
+                )}
+              </div>
+            )}
+          </div>
+          <div className="add">
+            <Link to="/add" className="link">
+              <button className="addBtn">Add book</button>
+            </Link>
+          </div>
         </div>
         <div className="bookContainer">
           <div className="books">
@@ -90,6 +120,7 @@ const Home = () => {
                     <th>Author</th>
                     <th>Genre</th>
                     <th>Published On</th>
+                    <th>Add to wishlist</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -97,19 +128,42 @@ const Home = () => {
                     const formattedDate = moment(val.publishedOn).format(
                       'YYYY-MM-DD'
                     )
+                    const buttonText = wishlistBooks.some(
+                      (book) => book.id === val.id
+                    )
+                      ? 'Remove'
+                      : 'Add'
                     return (
                       <tr key={key}>
                         <td>{val.title}</td>
                         <td>{val.author}</td>
                         <td>{val.genre}</td>
                         <td>{formattedDate}</td>
+                        <td>
+                          <button
+                            className="addBtn"
+                            onClick={(e) => {
+                              // Toggle wishlist book based on current state
+                              const updatedWishlist = wishlistBooks.some(
+                                (book) => book.id === val.id
+                              )
+                                ? wishlistBooks.filter(
+                                    (book) => book.id !== val.id
+                                  )
+                                : [...wishlistBooks, val]
+                              setWishlistBooks(updatedWishlist)
+                            }}
+                          >
+                            {buttonText}
+                          </button>
+                        </td>
                       </tr>
                     )
                   })}
                 </tbody>
               </table>
             </div>
-            <nav className='navbar'>
+            <nav className="navbar">
               <ul className="pagination">
                 <li className="page-item">
                   <button href="" className="page-link" onClick={prePage}>
