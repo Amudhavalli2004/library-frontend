@@ -86,7 +86,6 @@ const Home = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Book Id</th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
@@ -100,7 +99,6 @@ const Home = () => {
                     )
                     return (
                       <tr key={key}>
-                        <td>{val.id}</td>
                         <td>{val.title}</td>
                         <td>{val.author}</td>
                         <td>{val.genre}</td>
